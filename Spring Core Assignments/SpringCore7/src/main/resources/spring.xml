@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+   
+    <bean id="example" class="spel_Assign7thAssi.Example">
+         <property name="greater" value="#{25 gt 20}"/>
+         <property name="lesser" value="#{25 lt 20}"/>
+         <property name="greaterEqual" value="#{25 ge 20}"/>
+         <property name="lesserEqual" value="#{25 le 20}"/> 
+         <property name="addString" value="#{'smiley!'+' Good Morning!'}"/>
+    </bean>
+
+
+</beans>

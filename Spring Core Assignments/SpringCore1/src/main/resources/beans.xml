@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+
+<bean name="address1" class="setter_Assign.Address">
+	<property name="street" value="Street:Ambedkar Nagar"/>
+	<property name="city" value="Hyderabad"/>
+	<property name="country" value="India"/>
+	<property name="state" value="Telangana"/>
+	<property name="zip" value="500002"/>
+</bean>
+
+
+<bean name="customer1" class="setter_Assign.Customer">
+	<property name="customerName" value="Shrikar Devilliers"/>
+	<property name="customerId" value="7862035"/>
+	<property name="customerContact" value="8333077740"/>
+	<property name="customerAddress"> <ref bean="address1"/>
+	</property>
+</bean>
+
+
+<bean name="address2" class="setter_Assign.Address">
+	<constructor-arg value="Sainikpuri street no.3"/>
+	<constructor-arg value="Karimnagar"/>
+	<constructor-arg value="Andhrapradesh"/>
+	<constructor-arg value="505451"/>
+	<constructor-arg value="India"/>
+</bean>
+
+<bean name="customer2" class="setter_Assign.Customer">
+	<constructor-arg value="1010786"/>
+	<constructor-arg value="Aiden Markram"/>
+	<constructor-arg value="7036158394"/>
+	<constructor-arg ref="address2"/>
+</bean>
+
+</beans>
