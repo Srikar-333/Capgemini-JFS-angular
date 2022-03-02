@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
-//import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,21 +17,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
 import admin.model.Admin;
 import admin.model.Bookingdetails;
 import admin.model.CustomerRating;
-//import admin.model.JwtRequest;
-//import admin.model.JwtResponse;
 import admin.model.Washers;
 import admin.model.washpack;
 import admin.repository.adminrepo;
-//import admin.service.AdminServiceSecurity;
 import admin.service.serviceImplementation;
 import io.swagger.annotations.ApiOperation;
-
-
-//@CrossOrigin(origins="http://localhost:3000")
 
 @RestController
 @RequestMapping("/admin")
@@ -77,7 +69,7 @@ public class Admincontroller<AdminInfo> {
 		return "Sucessfully deleted admin";
 	}
 
-	// packs operations
+
 	@GetMapping("/allpacks")
 	public List<washpack> getwashpacks() {
 		return service.getwashpack();
@@ -96,7 +88,6 @@ public class Admincontroller<AdminInfo> {
 		return "pack deleted";
 	}
 
-	// Ratings operations
 	@PostMapping("/addratings")
 	public String saveratings(@RequestBody CustomerRating rating) {
 		service.save(rating);
@@ -109,8 +100,6 @@ public class Admincontroller<AdminInfo> {
 		return service.getuser();
 	}
 
-	/* --------------Resttemplates--------------------- */
-	// bookings
 	@GetMapping("/allorders")
 	public List<Bookingdetails> findAllorders() {
 		String baseurl = "http://localhost:8083/order/allorders";
@@ -118,7 +107,6 @@ public class Admincontroller<AdminInfo> {
 		return Arrays.asList(allorders);
 	}
 
-	// washers
 	@GetMapping("/allwashers")
 	public List<Washers> findAllwashers() {
 		String baseurl = "http://localhost:8082/wash/allwashers";
