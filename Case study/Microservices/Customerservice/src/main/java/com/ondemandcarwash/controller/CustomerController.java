@@ -30,7 +30,6 @@ public class CustomerController {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
-	//Creating/ADDING Customer
 	@PostMapping("/addcustomer")
 	public Customer saveCustomer(@RequestBody Customer customer) 
 	{
@@ -38,7 +37,7 @@ public class CustomerController {
 	
 	}
 	
-	//Reading all Customer 
+
 	@GetMapping("/allcustomers")
 	public List<Customer> findAllCustomers()
 	{
@@ -46,7 +45,6 @@ public class CustomerController {
 		
 	}
 	
-	//Reading Customer by ID
 	@GetMapping("/allcustomers/{id}")
 	public Optional<Customer> getCustomerById(@PathVariable int id) throws ApiRequestException
 	{
@@ -55,7 +53,6 @@ public class CustomerController {
 	}
 	
 	
-	//Updating Customer Data by Id
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Object> updateCustomer(@PathVariable int id, @RequestBody Customer customer) throws ApiRequestException
 	{
@@ -71,7 +68,6 @@ public class CustomerController {
 		
 	}
 	
-	// Deleting Customer Data by Id 
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Object> deleteCustomer (@PathVariable int id) throws ApiRequestException
 	{
